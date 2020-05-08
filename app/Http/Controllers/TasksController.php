@@ -52,7 +52,7 @@ class TasksController extends Controller
     {
         $this->validate($request, [
             'content' => 'required|max:191',
-            'status' => 'required|max:191',
+            'status' => 'required|max:10',
         ]);
         
         $request->user()->tasks()->create([
@@ -104,7 +104,7 @@ class TasksController extends Controller
     {
         $this->validate($request, [
             'content' => 'required|max:191',
-            'status' => 'required|max:191',
+            'status' => 'required|max:10',
         ]);
         
         $request->user()->tasks()->where('id',$id)->update([

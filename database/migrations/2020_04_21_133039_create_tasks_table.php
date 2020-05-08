@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->string('content');
-            $table->string('status');
+            $table->string('status', 10);
             $table->timestamps();
 
             // 外部キー制約を張る
