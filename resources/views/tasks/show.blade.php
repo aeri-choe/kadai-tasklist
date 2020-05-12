@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (Auth::check())
 <div class="col-sm-9 mx-auto">
-    <h1 class="mb-3">#{{ $task->id }} Task詳細</h1>
+    <h1 class="mb-3">{{ Auth::user()->name }}`s Task詳細</h1>
 
     <table class="table table-bordered">
-        <tr>
-            <th>ID</th>
-            <td>{{ $task->id }}</td>
-        </tr>
         <tr>
             <th>Task</th>
             <td>{{ $task->content }}</td>
@@ -30,4 +28,7 @@
         </div>
     </div>
 </div>
+
+@endif
+
 @endsection

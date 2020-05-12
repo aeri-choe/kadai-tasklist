@@ -16,7 +16,7 @@
         <tbody>
             @foreach ($tasks as $task)
             <tr>
-                @if (Auth::id() == $user->id)
+               @if (Auth::id() == $user->id)
                 <td>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!}</td>
                 @else
                 <td>{{ $task->id }}</td>
@@ -32,7 +32,7 @@
     @if (Auth::id() == $user->id)
     {!! link_to_route('tasks.create', '新規タスク追加', [], ['class' => 'btn btn-block btn-primary']) !!}
     @endif
-    
+
 </div>
 
 @endsection
